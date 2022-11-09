@@ -21,6 +21,11 @@ main.show-nav {
   rotate: -20deg;
 }
 
+main.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
 .circle-container {
   position: fixed;
   top: -100px;
@@ -69,4 +74,39 @@ p {
 
 main img {
   margin: 1rem auto;
+}
+
+nav {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  padding-left: 2rem;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 2rem auto;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+  cursor: pointer;
+}
+
+nav ul li + li {
+  margin-left: 1rem;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 2rem;
+  transform: translateX(-200%);
+}
+
+nav ul li i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
 }
