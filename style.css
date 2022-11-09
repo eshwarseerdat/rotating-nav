@@ -10,7 +10,7 @@ body {
 main {
   background-color: #fafafa;
   transform-origin: top left;
-  transition: transform-origin 0.5s linear;
+  transition: rotate 0.5s linear;
   width: 100vw;
   min-height: 100vh;
   padding: 4rem;
@@ -19,6 +19,7 @@ main {
 
 main.show-nav {
   rotate: -20deg;
+  z-index: 0;
 }
 
 main.show-nav + nav li {
@@ -30,6 +31,7 @@ main.show-nav + nav li {
   position: fixed;
   top: -100px;
   left: -100px;
+  z-index: 1;
 }
 
 .circle {
@@ -39,6 +41,10 @@ main.show-nav + nav li {
   height: 200px;
   border-radius: 50%;
   transition: rotate 0.5s linear;
+}
+
+.circle.show-nav {
+  rotate: -90deg;
 }
 
 .circle button {
@@ -94,6 +100,14 @@ nav ul li {
   transform: translateX(-100%);
   transition: transform 0.4s ease-in;
   cursor: pointer;
+}
+
+nav ul li:hover {
+  color: #ccc;
+}
+
+nav ul li:active {
+  scale: 0.98;
 }
 
 nav ul li + li {
